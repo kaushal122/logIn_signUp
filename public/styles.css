@@ -1,0 +1,15 @@
+body{
+   border-color: #9370DB;
+}
+.container {
+  display: flex; /* use flexbox layout */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 100vh; /* set container height to full viewport height */
+}
+
+.card {
+  width: 400px;
+    background-color: #66CDAA;
+  /* add other styles as needed */
+}

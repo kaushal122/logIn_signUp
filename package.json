@@ -1,0 +1,18 @@
+{
+  "name": "day13",
+  "version": "1.0.0",
+  "description": "Sign Up Form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Kaushal Kishor",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.4"
+  }
+}
