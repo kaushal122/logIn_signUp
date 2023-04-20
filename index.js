@@ -48,9 +48,8 @@ app.post("/",function(req,res){
     }
   });
 });
-
   console.log(req.body);
-  res.send("Signed Up Successfully....");
+  res.sendFile(__dirname+"/public/success.html");
 });
 
 Profile.find()
