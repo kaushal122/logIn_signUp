@@ -57,6 +57,36 @@ Profile.find()
 .catch((err)=>console.log("Error"));
 
 
+app.get("/login",function(req,res){
+  console.log("This means login page is rendering well")
+  res.sendFile(__dirname+"/public/login.html");
+});
+
+app.post("/login",function(req,res){
+  //console.log(req.body)
+  const email=req.body.exampleDropdownFormEmail1;
+  const pass=req.body.exampleDropdownFormPassword1;
+  //console.log(email);
+  Profile.findOne({name:email})
+  .then((profile)=>{
+      //console.log("Till here everything is okay...");
+      if(!profile)
+       res.status(404).send('User not found');
+    bcrypt.compare(pass, profile.password, function(err, result) {
+      if (err)
+      res.status(500).send('Internal server error');
+      if (!result)
+      res.status(401).send('Invalid password');
+      else
+            res.sendFile(__dirname+"/public/loginSuccess.html");
+    });
+  })
+    .catch((err)=>console.log("Error is there"));
+});
+
+
+
+
 
 app.listen(3000,function(){
   console.log("Server is running on 3000");
